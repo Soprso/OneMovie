@@ -125,3 +125,11 @@ spans.forEach((span, idx) => {
     span.classList.add('active');
   }, 750 * (idx+1))
 });
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show'); // Toggle the "show" class
+});
+

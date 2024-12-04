@@ -12,23 +12,34 @@
 </head>
 <body>
     <header class="navbar">
+        <!-- Logo with Animation -->
         <div class="word">
-            <span>M</span>
-            <span>O</span>
-            <span>V</span>
-            <span>I</span>
-            <span>X</span>
-          </div>  
+          <span>M</span>
+          <span>O</span>
+          <span>V</span>
+          <span>Y</span>
+          <span>X</span>
+        </div>
+      
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          &#9776; <!-- Hamburger Icon -->
+        </button>
+      
+        <!-- Navigation Links -->
         <nav>
           <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#today-movie">Today's Movie</a></li>
             <li><a href="#about-us">About Us</a></li>
+            <li><a href="#logs">What's Next?</a></li>
           </ul>
         </nav>
       </header>
       
+      
   </div>
-      <main class="main-content" id="main-content">
+      <section class="main-content" id="home">
         <h3>Feel The <span class="multiple-text"></span></h3>
         <div class="about-images-container">
             <!-- Left Button -->
@@ -57,53 +68,57 @@
             <!-- Right Button -->
             <button class="carousel-button right" onclick="scrollCarousel(1)">&#8250;</button>
           </div>
-        <h2 class="movie-title">Pushpa The Rise - Part 1 (2021) Hindi (Cleaned) 720p AMZN WEB-DL x264 AAC2.0</h2>
-        <div class="video-container">
-          <!-- YouTube Embedded Video -->
-          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/qnYSN_7qwgg?si=wxYPu3gemh2OdP3b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-          <!-- Video.js Video Player -->
-      <!-- <video
-      id="my-video"
-      class="video-js vjs-default-skin"
-      controls
-      preload="auto"
-    >
-      <source src="sample-video.mkv" type="video/webm">
-      Your browser does not support this format.
-    </video> -->
-
-
-    <!-- gdrive embedded link -->
-    <iframe src="https://docs.google.com/file/d/1Sw8WLxJvjlVm-XlJ0ljt4_6tXPd4w9Ee/preview" width="640" height="480" allow="autoplay" width="100%" 
-    height="auto" 
-    allow="autoplay; fullscreen" 
-    allowfullscreen>></iframe> 
-          <div class="video-info">
-            <div class="like-dislike">
-              <button id="like-button">👍 <span id="like-count">0</span></button>
-              <button id="dislike-button">👎 <span id="dislike-count">0</span></button>
+          </section>
+        <section class="main-content" id="today-movie">
+            <h2 class="movie-title">Pushpa The Rise - Part 1 (2021) Hindi (Cleaned) 720p AMZN WEB-DL x264 AAC2.0</h2>
+            <div class="video-container">
+              <!-- YouTube Embedded Video -->
+              <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/qnYSN_7qwgg?si=wxYPu3gemh2OdP3b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+              <!-- Video.js Video Player -->
+          <!-- <video
+          id="my-video"
+          class="video-js vjs-default-skin"
+          controls
+          preload="auto"
+        >
+          <source src="sample-video.mkv" type="video/webm">
+          Your browser does not support this format.
+        </video> -->
+    
+    
+        <!-- gdrive embedded link -->
+        <iframe src="https://docs.google.com/file/d/1Sw8WLxJvjlVm-XlJ0ljt4_6tXPd4w9Ee/preview" width="640" height="480" allow="autoplay" width="100%" 
+        height="auto" 
+        allow="autoplay; fullscreen" 
+        allowfullscreen>></iframe> 
+              <div class="video-info">
+                <div class="like-dislike">
+                  <button id="like-button">👍 <span id="like-count">0</span></button>
+                  <button id="dislike-button">👎 <span id="dislike-count">0</span></button>
+                </div>
+              </div>
+        
+              <p class="movie-description">
+                A labourer named Pushpa makes enemies as he rises in the world of red sandalwood smuggling. However, violence erupts when the police attempt to bring down his illegal business.
+              </p>
+        
+              <!-- Comment Section -->
+              <div class="comment-section">
+                <h3>Comments</h3>
+                <form id="comment-form">
+                  <textarea id="comment-input" placeholder="Add a comment..." required></textarea>
+                  <button type="submit">Post Comment</button>
+                </form>
+                <ul id="comment-list"></ul>
+              </div>
             </div>
-          </div>
-    
-          <p class="movie-description">
-            A labourer named Pushpa makes enemies as he rises in the world of red sandalwood smuggling. However, violence erupts when the police attempt to bring down his illegal business.
-          </p>
-    
-          <!-- Comment Section -->
-          <div class="comment-section">
-            <h3>Comments</h3>
-            <form id="comment-form">
-              <textarea id="comment-input" placeholder="Add a comment..." required></textarea>
-              <button type="submit">Post Comment</button>
-            </form>
-            <ul id="comment-list"></ul>
-          </div>
-        </div>
-      </main>
+        </section>
+       
 
       <section class="about-us" id="about-us">
         <div class="about-us-container">
           <h2 class="about-title">About Us</h2>
+
           <div class="about-content">
             <div class="about-text">
               <p>
