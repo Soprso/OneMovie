@@ -38,3 +38,49 @@ commentForm.addEventListener('submit', (event) => {
   // Clear the input field
   commentInput.value = '';
 });
+
+
+const carousel = document.querySelector('.about-images');
+let scrollAmount = 0;
+let autoScrollInterval;
+
+function scrollCarousel(direction) {
+  const scrollStep = 300; // Adjust based on image width + gap
+  const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+  scrollAmount += direction * scrollStep;
+
+  // Prevent scrolling beyond the limits
+  if (scrollAmount < 0) scrollAmount = 0;
+  if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+
+  carousel.style.transform = `translateX(-${scrollAmount}px)`;
+}
+
+function autoScrollCarousel() {
+  const scrollStep = 300; // Adjust based on image width + gap
+  const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+  scrollAmount += scrollStep;
+
+  // Loop back to the start if reaching the end
+  if (scrollAmount > maxScroll) {
+    scrollAmount = 0;
+  }
+
+  carousel.style.transform = `translateX(-${scrollAmount}px)`;
+}
+
+// Start auto-scroll
+autoScrollInterval = setInterval(autoScrollCarousel, 3000); // Scroll every 3 seconds
+
+// Pause auto-scroll on button click
+document.querySelectorAll('.carousel-button').forEach((button) => {
+  button.addEventListener('click', () => {
+    clearInterval(autoScrollInterval);
+    setTimeout(() => {
+      autoScrollInterval = setInterval(autoScrollCarousel, 3000); // Resume after 3 seconds
+    }, 5000); // Pause auto-scroll for 5 seconds
+  });
+});
+
