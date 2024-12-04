@@ -7,10 +7,18 @@
     <link rel="stylesheet" href="style.css">
      <!-- Video.js CSS -->
   <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">One Movie</div>
+        <div class="word">
+            <span>M</span>
+            <span>O</span>
+            <span>V</span>
+            <span>I</span>
+            <span>X</span>
+          </div>  
         <nav>
           <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -18,8 +26,37 @@
           </ul>
         </nav>
       </header>
-    
-      <main class="main-content">
+      
+  </div>
+      <main class="main-content" id="main-content">
+        <h3>Feel The <span class="multiple-text"></span></h3>
+        <div class="about-images-container">
+            <!-- Left Button -->
+            <button class="carousel-button left" onclick="scrollCarousel(-1)">&#8249;</button>
+          
+            <!-- Carousel Images -->
+            <div class="about-images">
+              <img src=deadpool.jpg alt="Movie Night">
+              <img src=pic2.jpeg alt="Cinema Experience">
+              <img src=jjk.jpeg alt="JJK">
+              <img src=pushpa.jpg alt="Pushpa 2">
+              <img src=ashiqi.jpg alt="Ashiqi">
+              <img src=sp3.jpg alt="Spiderman3">
+              <img src=deadpool.jpg alt="Movie Night">
+              <img src=pic2.jpeg alt="Cinema Experience">
+              <img src=deadpool.jpg alt="Movie Night">
+              <img src=pic2.jpeg alt="Cinema Experience">
+              <img src=deadpool.jpg alt="Movie Night">
+              <img src=pic2.jpeg alt="Cinema Experience">
+              <img src=deadpool.jpg alt="Movie Night">
+              <img src=pic2.jpeg alt="Cinema Experience">
+              <img src=deadpool.jpg alt="Movie Night">
+              <img src=pic2.jpeg alt="Cinema Experience">
+            </div>
+          
+            <!-- Right Button -->
+            <button class="carousel-button right" onclick="scrollCarousel(1)">&#8250;</button>
+          </div>
         <h2 class="movie-title">Pushpa The Rise - Part 1 (2021) Hindi (Cleaned) 720p AMZN WEB-DL x264 AAC2.0</h2>
         <div class="video-container">
           <!-- YouTube Embedded Video -->
@@ -80,26 +117,7 @@
                 that captivate your heart and mind.
               </p>
             </div>
-            <div class="about-images-container">
-                <!-- Left Button -->
-                <button class="carousel-button left" onclick="scrollCarousel(-1)">&#8249;</button>
-              
-                <!-- Carousel Images -->
-                <div class="about-images">
-                  <img src=deadpool.jpg alt="Movie Night">
-                  <img src=pic2.jpeg alt="Cinema Experience">
-                  <img src=deadpool.jpg alt="Movie Night">
-                  <img src=pic2.jpeg alt="Cinema Experience">
-                  <img src=deadpool.jpg alt="Movie Night">
-                  <img src=pic2.jpeg alt="Cinema Experience">
-                  <img src=deadpool.jpg alt="Movie Night">
-                  <img src=pic2.jpeg alt="Cinema Experience">
-                </div>
-              
-                <!-- Right Button -->
-                <button class="carousel-button right" onclick="scrollCarousel(1)">&#8250;</button>
-              </div>
-          </div>
+            
         </div>
       </section>
       
@@ -109,6 +127,8 @@
       </footer>
         <!-- Video.js JavaScript -->
   <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+   <!-- typed js -->
+   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
     // Initialize Video.js with fluid responsiveness
     var player = videojs('my-video', {

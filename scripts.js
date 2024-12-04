@@ -44,21 +44,23 @@ const carousel = document.querySelector('.about-images');
 let scrollAmount = 0;
 let autoScrollInterval;
 
+// Scroll the carousel manually
 function scrollCarousel(direction) {
-  const scrollStep = 300; // Adjust based on image width + gap
+  const scrollStep = 315; // Adjust based on image width + gap
   const maxScroll = carousel.scrollWidth - carousel.clientWidth;
 
   scrollAmount += direction * scrollStep;
 
   // Prevent scrolling beyond the limits
   if (scrollAmount < 0) scrollAmount = 0;
-  if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+  if (scrollAmount > maxScroll) scrollAmount = 0; // Loop back to start
 
   carousel.style.transform = `translateX(-${scrollAmount}px)`;
 }
 
+// Auto-scroll the carousel
 function autoScrollCarousel() {
-  const scrollStep = 300; // Adjust based on image width + gap
+  const scrollStep = 315; // Adjust based on image width + gap
   const maxScroll = carousel.scrollWidth - carousel.clientWidth;
 
   scrollAmount += scrollStep;
@@ -72,15 +74,54 @@ function autoScrollCarousel() {
 }
 
 // Start auto-scroll
-autoScrollInterval = setInterval(autoScrollCarousel, 3000); // Scroll every 3 seconds
+function startAutoScroll() {
+  autoScrollInterval = setInterval(autoScrollCarousel, 3000); // Scroll every 3 seconds
+}
 
-// Pause auto-scroll on button click
+// Stop auto-scroll
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+// Add event listeners for hover and interaction
+carousel.addEventListener('mouseenter', stopAutoScroll); // Pause on hover
+carousel.addEventListener('mouseleave', startAutoScroll); // Resume on mouse leave
+
 document.querySelectorAll('.carousel-button').forEach((button) => {
   button.addEventListener('click', () => {
-    clearInterval(autoScrollInterval);
-    setTimeout(() => {
-      autoScrollInterval = setInterval(autoScrollCarousel, 3000); // Resume after 3 seconds
-    }, 5000); // Pause auto-scroll for 5 seconds
+    stopAutoScroll(); // Stop auto-scroll on button click
+    setTimeout(startAutoScroll, 5000); // Resume auto-scroll after 5 seconds
   });
 });
 
+// Initialize auto-scroll
+startAutoScroll();
+
+
+
+// typed js
+
+const typed= new Typed('.multiple-text',{
+    strings: ['Movie', 'Moment','Magic'],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
+})
+
+
+const spans = document.querySelectorAll('.word span');
+
+spans.forEach((span, idx) => {
+  span.addEventListener('click', (e) => {
+    e.target.classList.add('active');
+  });
+  span.addEventListener('animationend', (e) => {
+    e.target.classList.remove('active');
+  });
+  
+  // Initial animation
+  setTimeout(() => {
+    span.classList.add('active');
+  }, 750 * (idx+1))
+});
