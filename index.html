@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Movie</title>
+    <link rel="stylesheet" href="style.css">
+     <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">One Movie</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#contact">Logs</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+      <main class="main-content">
+        <h2 class="movie-title">Pushpa The Rise - Part 1 (2021) Hindi (Cleaned) 720p AMZN WEB-DL x264 AAC2.0</h2>
+        <div class="video-container">
+          <!-- Video.js Video Player -->
+          <video
+            id="my-video"
+            class="video-js vjs-default-skin"
+            controls
+            preload="auto"
+            width="800"
+            height="450"
+          >
+            <!-- MP4 Source -->
+  <!-- <source src="sample-video.mp4" type="video/mp4"> -->
+            <source src="sample-video.mkv" type="video/webm">
+            Your browser does not support this format.
+          </video>
+    
+          <div class="video-info">
+            <div class="like-dislike">
+              <button id="like-button">👍 <span id="like-count">0</span></button>
+              <button id="dislike-button">👎 <span id="dislike-count">0</span></button>
+            </div>
+          </div>
+    
+          <p class="movie-description">
+            A labourer named Pushpa makes enemies as he rises in the world of red sandalwood smuggling. However, violence erupts when the police attempt to bring down his illegal business.
+          </p>
+    
+          <!-- Comment Section -->
+          <div class="comment-section">
+            <h3>Comments</h3>
+            <form id="comment-form">
+              <textarea id="comment-input" placeholder="Add a comment..." required></textarea>
+              <button type="submit">Post Comment</button>
+            </form>
+            <ul id="comment-list"></ul>
+          </div>
+        </div>
+      </main>
+    
+      <footer class="footer">
+        <p>&copy; 2024 One Movie. All rights reserved.</p>
+      </footer>
+        <!-- Video.js JavaScript -->
+  <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+  <script>
+    // Initialize Video.js with fluid responsiveness
+    var player = videojs('my-video', {
+      fluid: true, // Enable responsive design
+      preload: 'auto',
+      controls: true,
+    });
+  </script>
+      <script src="scripts.js"></script>
+</body>
+</html>
