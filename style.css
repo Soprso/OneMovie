@@ -296,4 +296,87 @@
       height: auto;
     }
   }
+
+  /* About Section Click Animation */
+.about-us {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .about-us:active {
+    transform: scale(1.02); /* Slight zoom on click */
+    background-color: #1a1a1a; /* Slightly lighter background on click */
+  }
+  
+  .about-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #e50914;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Animation for About Content Text Hover */
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .about-text:hover {
+    transform: translateY(-5px); /* Subtle upward shift */
+    color: #e50914; /* Change text color to red */
+  }
+  
+  .about-text .highlight {
+    color: #e50914;
+    font-weight: bold;
+  }
+  
+  /* About Images */
+  .about-images {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .about-images img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .about-images img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-text {
+      text-align: center;
+    }
+  }
+  
+   
   
