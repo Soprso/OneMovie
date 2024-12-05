@@ -133,3 +133,25 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('show'); // Toggle the "show" class
 });
 
+
+// Carousel Navigation Buttons
+const movieCards = document.querySelector('.movie-cards');
+const leftButton = document.querySelector('.left-button');
+const rightButton = document.querySelector('.right-button');
+
+// Scroll left
+leftButton.addEventListener('click', () => {
+  movieCards.scrollBy({
+    left: -300, // Adjust scroll distance
+    behavior: 'smooth'
+  });
+});
+
+// Scroll right
+rightButton.addEventListener('click', () => {
+  movieCards.scrollBy({
+    left: 300, // Adjust scroll distance
+    behavior: 'smooth'
+  });
+});
+
